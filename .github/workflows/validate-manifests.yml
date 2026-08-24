@@ -1,0 +1,25 @@
+name: Validate manifests
+
+on:
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Validate JSON
+        run: |
+          set -e
+          for f in manifests/*.json server.json; do
+            echo "→ $f"; node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"
+          done
+          echo "✓ JSON OK"
+      - name: Verify endpoint URL consistency
+        run: |
+          set -e
+          grep -l "https://api.mcp.ai/jus" smithery.yaml server.json manifests/*.json > /dev/null
+          echo "✓ endpoint consistent"

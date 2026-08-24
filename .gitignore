@@ -1,0 +1,32 @@
+# Secrets — NUNCA commitar
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+secrets/
+credentials.*
+*.local.*
+
+# Logs
+*.log
+logs/
+
+# Node
+node_modules/
+dist/
+build/
+.cache/
+
+# Screenshots brutos com dados reais
+assets/screenshots-raw/
+*.raw.png
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.notes/

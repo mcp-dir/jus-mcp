@@ -1,0 +1,9 @@
+{
+  "_comment": "Cole o objeto 'mcpServers.jus' dentro do seu claude_desktop_config.json. macOS: ~/Library/Application Support/Claude/claude_desktop_config.json — Windows: %APPDATA%\\Claude\\claude_desktop_config.json. Reinicie o Claude Desktop. Se o cliente suportar OAuth 2.1, o browser abre automaticamente; senão o agente expõe a tool authenticate (app.mcp.ai/agent-auth).",
+  "mcpServers": {
+    "jus": {
+      "type": "http",
+      "url": "https://api.mcp.ai/jus"
+    }
+  }
+}

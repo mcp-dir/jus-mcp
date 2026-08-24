@@ -1,0 +1,8 @@
+{
+  "_comment": "Cole em .cursor/mcp.json (workspace) OU ~/.cursor/mcp.json (global). Reinicie o Cursor.",
+  "mcpServers": {
+    "jus": {
+      "url": "https://api.mcp.ai/jus"
+    }
+  }
+}

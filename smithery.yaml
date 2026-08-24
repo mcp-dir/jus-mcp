@@ -1,0 +1,46 @@
+# Smithery configuration for Jus MCP
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/jus
+
+name: jus-mcp
+displayName: "Jus MCP"
+description: >
+  Todo o jurídico brasileiro numa conexão só: processos por nome/CPF/CNPJ/número, publicações e intimações do DJEN, jurisprudência, cálculos judiciais, licitações do PNCP e acórdãos do TCU, certidões de regularidade, sanções e compliance, e mais de 150 consultas em fontes e órgãos oficiais. Hospedado pela plataforma, sem login, com as fontes públicas grátis e crédito pré-pago só nas consultas pagas.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/jus-mcp
+repository: https://github.com/mcp-dir/jus-mcp
+
+tags:
+  - jus
+  - legal
+  - juridico
+  - brazil
+  - lawsuits
+  - processos
+  - court
+  - cnj
+  - datajud
+  - djen
+  - jurisprudencia
+  - case-law
+  - licitacoes
+  - compliance
+  - certidoes
+  - no-auth
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/jus
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/jus/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
